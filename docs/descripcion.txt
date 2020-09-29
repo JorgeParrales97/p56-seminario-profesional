@@ -1,7 +1,0 @@
-Universidad Politecnica Salesiana 
-
-Carrera: Ingenieria De Sistemas 
-
-Seminario Profesional Node.js + MongoDB 
-
-Clases - Diapositivas de las clases del seminario 
