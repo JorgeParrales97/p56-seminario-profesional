@@ -10,8 +10,8 @@ const DECREMENTAR_PESO = 2
 const aumenPeso = ( objeto ) => objeto.peso += INCREMENTAR_PESO
 const disminPeso = ( objeto ) => objeto.peso -= DECREMENTAR_PESO
 
-const comeMucho = () => Math.random() < 0.8
-const realizaDeporte = () => Math.random() < 0.4
+const comeMucho = () => Math.random() < 0.7
+const realizaDeporte = () => Math.random() < 0.2
 
 const META = persona.peso - 10
 
