@@ -18,6 +18,7 @@ async function updateDocente( idDocente, objeto ) {
     const foundDocente = await model.findOne({ _id: idDocente })
 
     foundDocente.nombre = objeto.nombre
+    foundDocente.correo = objeto.correo
     foundDocente.materia = objeto.materia
     foundDocente.horario = objeto.horario
 

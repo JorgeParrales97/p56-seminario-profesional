@@ -12,7 +12,6 @@ const mySchema = new schema({
     },
     nivel: {
         type: String,
-        required: true,
     },
     quintil: String,
 })
