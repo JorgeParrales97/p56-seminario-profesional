@@ -1,17 +1,48 @@
 const express = require('express')
 const response = require('../../network/response')
+const controller = require('./controller')
 
 const router = express.Router()
 
 router.get('/', function(req, res) {
-    response.success( req, res, 'Lista de Docentes de la UPS.', 200 )
+    const filtroDocente = req.query.docente|| null
+    controller.getDocente( filtroDocente )
+        .then((data) => {
+            response.success( req, res, data, 200 )
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500 )
+        })
 })
+
 router.post('/', function(req, res) {
-    if (req.query.error == 'ok') {
-        response.error( req, res, 'Error al ingresar Docente.', 500 )        
-    } else {
-        response.success( req, res, 'Ingreso de Docente exitoso.', 201 )        
-    }
+    controller.addDocente( req.body.nombre, req.body.materia, req.body.horario )
+        .then((data) => {
+            response.success( req, res, data, 201 )        
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500 )        
+        })
+})
+
+router.patch('/', function(req, res) {
+    controller.updateDocente( req.body.id_carrera, req.body.nombre, req.body.materia, req.body.horario)
+        .then((data) => {
+            response.success( req, res, data, 201 )        
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500 )        
+        })
+})
+
+router.delete('/', function(req, res) {
+    controller.deleteDocente( req.body.id_Docente )
+        .then((data) => {
+            response.success( req, res, data, 201 )        
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500 )        
+        })
 })
 
 module.exports = router
