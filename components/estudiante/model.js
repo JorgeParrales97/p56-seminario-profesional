@@ -12,8 +12,13 @@ const mySchema = new schema({
     },
     nivel: {
         type: String,
+        required: true,
+        
     },
-    quintil: String,
+    quintil: {
+        type: String,
+        required: true,
+    } 
 })
 
 const model = mongoose.model( 'Estudiante', mySchema )
