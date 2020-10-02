@@ -5,9 +5,9 @@ const estudiante = require('../components/estudiante/network')
 //const titulacion = require('../components/titulacion/network')
 
 const routes = function(server) {
-server.use('/Carrera', carrera)
-server.use('/Docente', docente)
-server.use('/Estudiante', estudiante)
+server.use('/carrera', carrera)
+server.use('/docente', docente)
+server.use('/estudiante', estudiante)
 //server.use('/titulacion', titulacion)
 }
 
