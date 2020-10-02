@@ -14,6 +14,10 @@ const mySchema = new schema({
         type: String,
         required: true,
     },
+    materia: {
+        type: String,
+        required: true,
+    }
 })
 
 const model = mongoose.model( 'Docente', mySchema )

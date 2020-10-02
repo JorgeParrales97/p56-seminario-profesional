@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
 })
 
 router.post('/', function(req, res) {
-    controller.addDocente( req.body.nombre, req.body.apellido, req.body.correo )
+    controller.addDocente( req.body.nombre, req.body.apellido, req.body.correo, req.body.materia )
         .then((data) => {
             response.success( req, res, data, 201 )        
         })
@@ -26,7 +26,7 @@ router.post('/', function(req, res) {
 })
 
 router.patch('/', function(req, res) {
-    controller.updateDocente( req.body.id_docente, req.body.nombre, req.body.apellido, req.body.correo )
+    controller.updateDocente( req.body.id_docente, req.body.nombre, req.body.apellido, req.body.correo, req.body.materia )
         .then((data) => {
             response.success( req, res, data, 201 )        
         })

@@ -20,6 +20,7 @@ async function updateDocente( idDocente, objeto ) {
     foundDocente.nombre = objeto.nombre
     foundDocente.apellido = objeto.apellido
     foundDocente.correo = objeto.correo
+    foundDocente.materia = objeto.materia
 
     const result = await foundDocente.save()
     return result
