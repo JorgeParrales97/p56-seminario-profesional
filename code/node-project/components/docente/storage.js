@@ -5,22 +5,21 @@ function addDocente( objeto ) {
     docente.save()
 }
 
-async function getDocente( filtroDocente ) {
+async function getDocentes( filtroDocente ) {
     let filtro = {}
     if (filtroDocente != null) {
         filtro = { nombre : filtroDocente }
     }
-    const DocenteList = await model.find( filtro )
-    return DocenteList
+    const docenteList = await model.find( filtro )
+    return docenteList
 }
 
 async function updateDocente( idDocente, objeto ) {
     const foundDocente = await model.findOne({ _id: idDocente })
 
     foundDocente.nombre = objeto.nombre
+    foundDocente.apellido = objeto.apellido
     foundDocente.correo = objeto.correo
-    foundDocente.materia = objeto.materia
-    foundDocente.horario = objeto.horario
 
     const result = await foundDocente.save()
     return result
@@ -32,7 +31,7 @@ function deleteDocente(idDocente) {
 
 module.exports = {
     add: addDocente,
-    get: getDocente,
+    get: getDocentes,
     update: updateDocente,
     delete: deleteDocente,
 }

@@ -6,15 +6,14 @@ const mySchema = new schema({
         type: String,
         required: true,
     },
+    apellido: {
+        type: String,
+        required: true,
+    },
     correo: {
         type: String,
         required: true,
     },
-    materia: {
-        type: String,
-        required: true,
-    },
-    horario: String,
 })
 
 const model = mongoose.model( 'Docente', mySchema )
