@@ -6,7 +6,7 @@ function addEstudiante(nombre, carrera, nivel, quintil) {
             nombre: nombre,
             carrera: carrera,
             nivel: nivel,
-            quintil: quintil,
+
         }
         storage.add( estudiante )
         resolve( estudiante )
@@ -19,13 +19,13 @@ function getEstudiante( filtroEstudiante ) {
     } )
 }
 
-function updateEstudiante(idEstudiante, nombre, carrera, nivel, quintil) {
+function updateEstudiante(idEstudiante, nombre, carrera, nivel) {
     return new Promise( async (resolve, reject) => {
         let estudiante = {
             nombre: nombre,
             carrera: carrera,
             nivel: nivel,
-            quintil: quintil,
+
         }
         const result = await storage.update(idEstudiante, estudiante  )
         resolve( result )

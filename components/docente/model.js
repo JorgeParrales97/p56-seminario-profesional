@@ -13,10 +13,6 @@ const mySchema = new schema({
     correo: {
         type: String,
         required: true,
-    },
-    materia: {
-        type: String,
-        required: true,
     }
 })
 

@@ -1,12 +1,12 @@
 const storage = require('./storage')
 
-function addDocente(nombre, apellido, correo, materia) {
+function addDocente(nombre, apellido, correo) {
     return new Promise((resolve, reject) => {
         let docente = {
             nombre: nombre,
             apellido: apellido,
             correo: correo,
-            materia: materia,
+            
         }
         storage.add( docente )
         resolve( docente )
@@ -19,13 +19,12 @@ function getDocentes( filtroDocente ) {
     } )
 }
 
-function updateDocente(idDocente, nombre, apellido, correo, materia) {
+function updateDocente(idDocente, nombre, apellido, correo) {
     return new Promise( async (resolve, reject) => {
         let docente = {
             nombre: nombre,
             apellido: apellido,
             correo: correo,
-            materia: materia,
         }
         const result = await storage.update(idDocente, docente)
         resolve( result )
