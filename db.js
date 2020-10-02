@@ -6,7 +6,7 @@ async function connect(uri) {
     await db.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        dbName: 'bdups',
+        dbName: 'ups',
     })
         .then((data) => { console.log('[db] - Conectada con éxito.') })
         .catch((error) => {  console.error( '[error log] - ' + error ) })    
