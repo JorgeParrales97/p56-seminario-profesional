@@ -19,7 +19,7 @@ async function updateEstudiante( idEstudiante, objeto ) {
 
     foundEstudiante.nombre = objeto.nombre
     foundEstudiante.carrera = objeto.carrera
-    foundEstudiante.quintil = objeto.quintil
+    foundEstudiante.cedula = objeto.cedula
 
     const result = await foundEstudiante.save()
     return result

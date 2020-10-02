@@ -6,7 +6,7 @@ const mySchema = new schema({
         type: String,
         required: true,
     },
-    apellido: {
+    materia: {
         type: String,
         required: true,
     },

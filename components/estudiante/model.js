@@ -10,7 +10,7 @@ const mySchema = new schema({
         type: String,
         required: true,
     },
-    quintil: {
+    cedula: {
         type: String,
         required: true,
         
